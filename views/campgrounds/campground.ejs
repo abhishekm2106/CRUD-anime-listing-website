@@ -1,0 +1,29 @@
+<%- include("../partials/header") %>
+
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>List of all Watched Anime</h1>
+    <p>View our hand picked anime's form all over the World</p>
+    <a class="btn btn-primary" href="/campground/new">Add new Anime</a>
+  </div>
+
+
+  <div class="row text-center d-flex justify-content-around">
+    <% campgrounds.forEach(function(cg){ %>
+    <div class="col-lg-3 col-sm-6 col-12 mb-4">
+      <div class="card ">
+        <img src="<%= cg.image%>" class="card-img-top">
+        <div class="card-body">
+          <p class="card-text"><%=cg.name %></p>
+          <a href="/campground/<%= cg._id %>" class="btn btn-primary">Know more</a>
+        </div>
+
+      </div>
+    </div>
+
+    <%})%>
+  </div>
+
+</div>
+<%- include("../partials/footer") %>
